@@ -9,66 +9,27 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class Downloader {
-	
-	private class Parameters {
-		
-		private double y;
-		private double x;
-		private double radius;
-		
-		public double getRadius() {
-			return radius;
-		}
-		
-		public void setRadius(double radius) {
-			this.radius = radius;
-		}
-			
-		public void setY(double abscissa) { 
-			this.y = abscissa;
-		}
-			 
-		public double getY() { 
-			return y;
-		}
-			 
-		public void setX(double ordinate) { 
-			this.x = ordinate;
-		} 
-			 
-		public double getX() { 
-			return x;
-		}
-		
-		public Parameters (double radius, double x, double y) {
-			this.radius = radius;
-			this.x = x;
-			this.y = y;
-		}
-	}
-	
-	public Parameters downloadParameters(String path) throws FileNotFoundException {
+
+	public List<double[]> downloadParameters(String path) throws FileNotFoundException {
 		
 		File file = new File(path);
         BufferedReader bufferInput = new BufferedReader(new FileReader(file));
-        
         Scanner scanner = new Scanner(bufferInput);
-        List<Parameters> parametersList = new ArrayList<Parameters>();
         
         double localRadius;
         double abscissa;
         double ordinate;
+        List<double[]> listOfArrays = new ArrayList<double[]>();
+        
         while(scanner.hasNextLine()) {
         	for(int i = 0; i < 0; i++) {
         		localRadius = scanner.nextDouble();
         		abscissa = scanner.nextDouble();
         		ordinate = scanner.nextDouble();
-        		
-        		parametersList.add(new Parameters(localRadius, abscissa,
-        				ordinate));
+
+        		listOfArrays.add(new double[] {localRadius, abscissa, ordinate});
         	}
         }
-		return (Parameters) parametersList;
-        
+		return listOfArrays;        
 	}
 }
