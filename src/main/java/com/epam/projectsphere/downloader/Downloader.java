@@ -53,7 +53,7 @@ public class Downloader {
         BufferedReader bufferInput = new BufferedReader(new FileReader(file));
         
         Scanner scanner = new Scanner(bufferInput);
-        List<Parameters> parametersList = new ArrayList<>();
+        List<Parameters> parametersList = new ArrayList<Parameters>();
         
         double localRadius;
         double abscissa;

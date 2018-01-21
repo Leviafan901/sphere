@@ -12,7 +12,7 @@ public class CalculationSphere {
 		return 4/3 * Math.PI * radius * radius * radius;
 	}
 	
-	public double getVolumeRatio() {
+	public void getVolumeRatio() {
 		
 	}
 	
