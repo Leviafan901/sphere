@@ -47,7 +47,7 @@ public class Downloader {
 		}
 	}
 	
-	public void downloadParameters(String path) throws FileNotFoundException {
+	public Parameters downloadParameters(String path) throws FileNotFoundException {
 		
 		File file = new File(path);
         BufferedReader bufferInput = new BufferedReader(new FileReader(file));
@@ -68,6 +68,7 @@ public class Downloader {
         				ordinate));
         	}
         }
+		return (Parameters) parametersList;
         
 	}
 }
